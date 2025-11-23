@@ -1,0 +1,2 @@
+#install
+!pip install -q pandas openpyxl
