@@ -1,0 +1,792 @@
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:   1   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL                                                                                               
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  VALID                                                                                                                 
+     NORMAL                         5561      1960       212         3         0      1760       429        18      9943
+     NONE                              0         0         0         0         7         0         0         0         7
+     INSTRUCTION                     893       260         7        16         1         0         0         0      1177
+     TEMPORARY                         4         0         0         0         0         4         1         0         9
+  EXPIRED                                                                                                               
+     NORMAL                         1338       497       167        17         0       225        48        14      2306
+     NONE                              0         1         0         1       125         0         0         0       127
+     INSTRUCTION                    2561      1925       324       162         0         4         0         0      4976
+     APPLICATION                       2         1         0         0         0         0         0         0         3
+     TEMPORARY                         4         1         1         1         0         0         0         0         7
+  SURRENDER                                                                                                             
+     NORMAL                        22887     10034      2284       104         5      5615      1396       163     42488
+     NONE                              9         6         3         1       126         0         0         0       145
+     INSTRUCTION                    2600      2328       372       282         0         9         7         0      5598
+     APPLICATION                       3         2         1         0         0         0         0         0         6
+     TEMPORARY                        40        19         6        13         0        22         2         0       102
+     PENDING                           1         1         0         0         0         0         0         0         2
+  CLEARED                                                                                                               
+     NORMAL                          500       174        46         4         6        84        11         0       825
+     NONE                              2         0         0         0       661         0         0         0       663
+     INSTRUCTION                      52        48         4         9         0         0         0         0       113
+     APPLICATION                       0         1         0         0         0         1         0         0         2
+     TEMPORARY                        10         0         0         0         0         0         0         0        10
+  DECEASED                                                                                                              
+     NORMAL                         4773      2249       693        25         0      1117       256        52      9165
+     NONE                              2         0         0         1        27         0         0         0        30
+     INSTRUCTION                     451       516       131        56         0         4         3         0      1161
+     APPLICATION                       1         2         1         0         0         0         0         0         4
+     TEMPORARY                        50        15         4         3         0         8         2         2        84
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:   2   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL                                                                                               
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  DECEASED                                                                                                              
+     HARDSHIP                          0         1         0         0         0         0         1         0         2
+  SUSPENDED                                                                                                             
+     NORMAL                         1174       571       160         7         0       143        33         6      2094
+     NONE                              1         0         0         0        34         1         0         0        36
+     INSTRUCTION                     378       409        73        32         0         1         0         0       893
+     APPLICATION                       1         0         0         0         0         0         0         0         1
+     TEMPORARY                         4         3         0         0         0         2         0         0         9
+     HARDSHIP                          1         2         0         0         0         0         0         0         3
+  REVOKED                                                                                                               
+     NORMAL                          752       358        64         9         0       100        39         3      1325
+     NONE                              0         1         0         0        34         0         0         0        35
+     INSTRUCTION                     280       249        20        17         0         1         0         0       567
+     APPLICATION                       1         0         1         0         0         0         0         0         2
+     TEMPORARY                        83        41        10         3         0        22         4         1       164
+  PENDING                                                                                                               
+     NORMAL                            1         0         0         0         0         0         0         0         1
+     NONE                              0         0         0         0       591         0         0         0       591
+  CANCELLED                                                                                                             
+     NORMAL                         1655       798       159        14         0       397       127        17      3167
+     NONE                              2         2         1         0         3         0         0         0         8
+     INSTRUCTION                     180       198        20        54         0         1         0         0       453
+     APPLICATION                       1         0         0         0         0         0         0         0         1
+     TEMPORARY                         1         0         1         2         0         0         1         0         5
+  DENIED                                                                                                                
+     NORMAL                            5         5         0         0         0         1         0         0        11
+     NONE                              0         0         0         0         1         0         0         0         1
+     INSTRUCTION                       1         0         0         0         0         0         0         0         1
+     APPLICATION                       0         2         0         0         0         0         0         0         2
+  OTHER                                                                                                                 
+     NORMAL                            1         0         0         0         0         0         0         0         1
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:   3   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL                                                                                               
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  OTHER                                                                                                                 
+     APPLICATION                       3         1         0         0         0         0         0         0         4
+0TOTAL                             46269     22681      4765       836      1621      9522      2360       276     88330
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:   4   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL                                                                                           
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  VALID                                                                                                                 
+     NORMAL                         1551      1203    465159       167         0       584       354     32735    501753
+     NONE                              1         0        21         4       182         0         0         0       208
+     INSTRUCTION                      17        22      2776       163         0         0         0        20      2998
+     TEMPORARY                         1         1       203         2         0         0         0        15       222
+     TEST                              0         0         1         0         0         0         0         0         1
+     HARDSHIP                          0         0         3         0         0         0         0         0         3
+  EXPIRED                                                                                                               
+     NORMAL                         3342      1366    583105       939         5       686       237     29955    619635
+     NONE                              0         0        64        41       588         0         1         0       694
+     INSTRUCTION                      76       167     30133      4489         1         0         1        47     34914
+     APPLICATION                       0         1       448         0         0         0         0         1       450
+     TEMPORARY                         1         0        55        36         0         0         0         1        93
+     TEST                              0         0         0         2         0         0         0         0         2
+     HARDSHIP                          0         0        23         2         0         0         0         0        25
+     SCHOOL                            0         0         6         0         0         0         0         0         6
+     PENDING                           0         0         1         1         0         0         0         0         2
+  SURRENDER                                                                                                             
+     NORMAL                         2988      1375    542675      1274        45       631       271     35412    584671
+     NONE                              5         6       143        92       888         1         0         2      1137
+     INSTRUCTION                      46       170     10853      2505        10         0         3        21     13608
+     APPLICATION                       2         0        61         1         0         0         0         0        64
+     TEMPORARY                         0         2        48        86         0         0         0         4       140
+     TEST                              0         0         4         3         1         0         0         0         8
+     HARDSHIP                          0         2        26         1         0         0         0         1        30
+     SCHOOL                            0         0        11         0         0         0         0         0        11
+     PENDING                           0         0         1         1         0         0         0         0         2
+  CLEARED                                                                                                               
+     NORMAL                          167        52     43184       235       831        24         7      1796     46296
+     NONE                              2         1       450        53    192928         0         1         6    193441
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:   5   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL                                                                                           
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  CLEARED                                                                                                               
+     INSTRUCTION                       1         0      1464       312         1         0         0        14      1792
+     APPLICATION                       3         0      1121         0        52         0         0         2      1178
+     TEMPORARY                         0         0       117        26         0         0         0         6       149
+     TEST                              0         0         0         1         1         0         0         0         2
+     HARDSHIP                          0         0        20         1         0         0         0         1        22
+     SCHOOL                            0         0         1         0         0         0         0         0         1
+     PENDING                           0         0         8         0         8         0         0         0        16
+  DECEASED                                                                                                              
+     NORMAL                         1687       704    316433       145        10       416       138     12971    332504
+     NONE                              3         1        46        55     19751         0         0         0     19856
+     INSTRUCTION                       3        28      2901       622         1         0         0        10      3565
+     APPLICATION                       0         0       148         0         7         0         0         0       155
+     TEMPORARY                         0         0       366        33         1         2         0        20       422
+     TEST                              0         0         1         5         0         0         0         0         6
+     HARDSHIP                          0         1        51         2         0         0         0         1        55
+  SUSPENDED                                                                                                             
+     NORMAL                          179        85     56126       344         6        27        10      1686     58463
+     NONE                              0         2        30        23     11880         0         0         0     11935
+     INSTRUCTION                       6        12      4116       454         0         0         0        18      4606
+     APPLICATION                       1         1        68         0         4         0         0         0        74
+     TEMPORARY                         0         1        39        18         0         0         0         2        60
+     TEST                              0         0         2         1         0         0         0         0         3
+     HARDSHIP                          0         1        64         4         0         0         0         2        71
+     SCHOOL                            0         0         1         0         0         0         0         0         1
+     PENDING                           0         0         1         0         0         0         0         0         1
+  REVOKED                                                                                                               
+     NORMAL                          155        54     24588       193         9        18         5       725     25747
+     NONE                              2         0        22        15     30224         0         0         0     30263
+     INSTRUCTION                       2         1      1290       227         0         0         0         7      1527
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:   6   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL                                                                                           
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  REVOKED                                                                                                               
+     APPLICATION                       0         0       104         0         3         0         0         0       107
+     TEMPORARY                         2         1      1037        48         0         0         0        31      1119
+     TEST                              0         0         2         0         0         0         0         0         2
+     HARDSHIP                          0         0        18         0         0         0         0         0        18
+     SCHOOL                            0         0         1         0         0         0         0         0         1
+     PENDING                           0         0         1         0         0         0         0         0         1
+  PENDING                                                                                                               
+     NORMAL                            0         0         3         1         0         0         0         0         4
+     NONE                              0         0         1         1    114151         0         0         0    114153
+     INSTRUCTION                       0         0         1         1         0         0         0         0         2
+     TEMPORARY                         0         0         0         1         0         0         0         0         1
+  CANCELLED                                                                                                             
+     NORMAL                           46        21      7873        38         2        10         2       201      8193
+     NONE                              0         1         3         5       580         0         0         0       589
+     INSTRUCTION                       1         1       366        33         0         0         0         2       403
+     APPLICATION                       1         0         0         0         1         0         0         0         2
+     TEMPORARY                         0         0         7         5         0         0         0         0        12
+     HARDSHIP                          0         0         1         0         0         0         0         0         1
+  DENIED                                                                                                                
+     NORMAL                            1         0       463         1         6         1         0        12       484
+     NONE                              0         0         9         1     12143         0         0         0     12153
+     INSTRUCTION                       0         0       140         4         0         0         0         1       145
+     APPLICATION                      11         0       647         0        30         0         0         0       688
+     TEST                              0         0         1         0         0         0         0         0         1
+  OTHER                                                                                                                 
+     NORMAL                            4         0        39        14         1         0         0         0        58
+     NONE                              0         1         4        29        15         0         0         0        49
+     INSTRUCTION                       0         0         3         4         0         0         0         0         7
+     APPLICATION                       6         0        85         0         2         0         0         1        94
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:   7   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL                                                                                           
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  OTHER                                                                                                                 
+     TEMPORARY                         0         0         1         0         0         0         0         0         1
+     TEST                              1         0        42         1         0         0         0         0        44
+0TOTAL                             10314      5284   2099330     12765    384368      2400      1030    115729   2631220
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:   8   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: DRIVER AUTHORIZATION CARD                                                                                
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  VALID                                                                                                                 
+     NORMAL                            7        10     71903        16         0         0         0       456     72392
+     NONE                              0         0         1         0         5         0         0         0         6
+     INSTRUCTION                       0         6      8311        11         0         0         0         5      8333
+     TEMPORARY                         0         0        32         0         0         0         0         0        32
+  EXPIRED                                                                                                               
+     NORMAL                           18        11     12837        20         0         5         0       207     13098
+     NONE                              0         0         0         1       102         0         0         0       103
+     INSTRUCTION                      15        14      5239       109         0         0         0         6      5383
+     APPLICATION                       0         0         3         0         0         0         0         0         3
+     TEMPORARY                         0         0         1         0         0         0         0         0         1
+     HARDSHIP                          0         0         1         0         0         0         0         0         1
+  SURRENDER                                                                                                             
+     NORMAL                          140        61      5893        11         3        26         8       133      6275
+     NONE                              0         0        14         0        48         0         0         0        62
+     INSTRUCTION                       7         9       293        19         0         0         0         1       329
+  CLEARED                                                                                                               
+     NORMAL                            3         2       561         1        27         0         0         6       600
+     NONE                              0         0        12         2     15676         0         0         0     15690
+     INSTRUCTION                       0         0        42         3         1         0         0         0        46
+     APPLICATION                       0         0        12         0         1         0         0         0        13
+  DECEASED                                                                                                              
+     NORMAL                           12         3      1070         2         0         5         0        21      1113
+     NONE                              0         0         0         0       128         0         0         0       128
+     INSTRUCTION                       0         3        45         1         0         0         0         0        49
+     TEMPORARY                         0         0         2         0         0         0         0         0         2
+  SUSPENDED                                                                                                             
+     NORMAL                            4         5      1093         4         0         0         0         9      1115
+     NONE                              0         0         0         0       737         0         0         0       737
+     INSTRUCTION                       2         5       186         5         0         0         0         0       198
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:   9   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: DRIVER AUTHORIZATION CARD                                                                                
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  REVOKED                                                                                                               
+     NORMAL                            2         2       864         2         0         0         0         5       875
+     NONE                              0         0         0         0      1870         0         0         0      1870
+     INSTRUCTION                       1         0       125         0         0         0         0         0       126
+     APPLICATION                       0         0         1         0         0         0         0         0         1
+     TEMPORARY                         0         0        40         1         0         0         0         0        41
+  PENDING                                                                                                               
+     NORMAL                            0         0         1         0         0         0         0         0         1
+     NONE                              0         0         0         0      8610         0         0         0      8610
+  CANCELLED                                                                                                             
+     NORMAL                            3         1       743         1         0         0         0         1       749
+     NONE                              0         0         1         0        23         0         0         0        24
+     INSTRUCTION                       2         2       150         1         0         0         0         0       155
+  DENIED                                                                                                                
+     NORMAL                            0         0         8         0         0         0         0         0         8
+     NONE                              0         0         1         0       865         0         0         0       866
+     INSTRUCTION                       0         0         3         0         0         0         0         0         3
+     APPLICATION                       0         1        13         0         1         0         0         0        15
+  OTHER                                                                                                                 
+     NORMAL                            0         0         0         0         1         0         0         0         1
+     APPLICATION                       1         0         0         0         0         0         0         0         1
+0TOTAL                               217       135    109501       210     28098        36         8       850    139055
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  10   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL REAL ID CARD                                                                                  
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  VALID                                                                                                                 
+     NORMAL                        34985     10608       660         5         1     10934      2503       143     59839
+     NONE                              0         0         0         0         7         0         0         0         7
+     INSTRUCTION                     211        61         3         1         0         0         0         0       276
+     TEMPORARY                        18         6         0         2         0         2         0         0        28
+  EXPIRED                                                                                                               
+     NORMAL                          905       456       132        41         0       177        43         6      1760
+     NONE                              0         1         0         3        94         0         0         0        98
+     INSTRUCTION                    2935      2514       594       363         0         0         2         0      6408
+     APPLICATION                       1         1         0         0         0         1         0         0         3
+     TEMPORARY                         1         2         0         2         0         1         0         0         6
+     HARDSHIP                          0         0         0         1         0         0         0         0         1
+  SURRENDER                                                                                                             
+     NORMAL                        21014     12307      2595       179        15      5512      1572       240     43434
+     NONE                             10        11         4         4       119         0         0         0       148
+     INSTRUCTION                    2329      3332       420       192         1         7         5         0      6286
+     APPLICATION                       2         2         0         0         0         0         0         0         4
+     TEMPORARY                        41        18         6         2         0         8         3         0        78
+     HARDSHIP                          2         2         0         0         0         0         0         0         4
+     SCHOOL                            0         1         0         0         0         0         0         0         1
+  CLEARED                                                                                                               
+     NORMAL                          326       142        28         6         7        49         9         1       568
+     NONE                              1         1         0         0      3211         0         0         0      3213
+     INSTRUCTION                      35        32         7         5         0         0         0         0        79
+     APPLICATION                       2         1         0         0         0         0         0         0         3
+     TEMPORARY                         5         2         0         1         0         0         2         0        10
+  DECEASED                                                                                                              
+     NORMAL                         2125      1053       268        13         0       684       167        23      4333
+     NONE                              0         1         0         0         7         0         0         0         8
+     INSTRUCTION                     198       236        36        22         1         0         0         0       493
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  11   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL REAL ID CARD                                                                                  
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  DECEASED                                                                                                              
+     APPLICATION                       0         1         0         0         0         0         0         0         1
+     TEMPORARY                        16         5         2         2         0         6         0         0        31
+  SUSPENDED                                                                                                             
+     NORMAL                         1134       460       117        11         1       185        36         9      1953
+     NONE                              0         1         0         0        43         0         0         0        44
+     INSTRUCTION                     283       341        70        19         0         1         0         0       714
+     APPLICATION                       1         0         0         0         0         0         0         0         1
+     TEMPORARY                         6         5         1         1         0         2         0         0        15
+  REVOKED                                                                                                               
+     NORMAL                          694       355        69        18         0       160        37         5      1338
+     NONE                              0         1         0         0        36         0         0         0        37
+     INSTRUCTION                     255       194        41        16         0         0         0         0       506
+     TEMPORARY                        99        46         9         1         0        28         6         4       193
+     PENDING                           1         0         0         0         0         0         0         0         1
+  PENDING                                                                                                               
+     NONE                              0         0         0         0       501         0         0         0       501
+  CANCELLED                                                                                                             
+     NORMAL                         2613      1509       241        30         0       709       238        38      5378
+     NONE                              1         0         1         1         2         0         0         0         5
+     INSTRUCTION                     243       254        46        46         0         0         1         0       590
+     APPLICATION                       0         1         0         0         0         0         0         0         1
+     TEMPORARY                         0         1         0         1         0         0         0         0         2
+  DENIED                                                                                                                
+     NORMAL                            7         2         3         0         0         1         0         0        13
+     INSTRUCTION                       0         0         0         1         0         0         0         0         1
+     APPLICATION                       1         1         0         0         0         0         0         0         2
+  OTHER                                                                                                                 
+     NORMAL                            1         0         1         0         0         0         0         0         2
+     NONE                              0         0         0         2         2         0         0         0         4
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  12   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL REAL ID CARD                                                                                  
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  OTHER                                                                                                                 
+     INSTRUCTION                       0         0         0         0         1         0         0         0         1
+     APPLICATION                       2         3         0         0         0         0         0         0         5
+0TOTAL                             70503     33970      5354       991      4049     18467      4624       469    138427
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  13   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL REAL ID CARD                                                                              
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  VALID                                                                                                                 
+     NORMAL                         3181      3460   1490030       193         0      1620      1539    116099   1616122
+     NONE                              0         1        15         9       167         0         0         0       192
+     INSTRUCTION                       5        24     53533        24         1         0         0         0     53587
+     TEMPORARY                         2         1       564         4         0         1         1        47       620
+     HARDSHIP                          0         0         2         1         0         0         0         0         3
+  EXPIRED                                                                                                               
+     NORMAL                         1990       854    325486      1217         7       435       118     16173    346280
+     NONE                              1         1        68        49       461         0         0         1       581
+     INSTRUCTION                     108       292     35930      4808         4         2         2        30     41176
+     APPLICATION                       0         0       428         0         0         0         0         3       431
+     TEMPORARY                         0         0        30        56         0         0         0         2        88
+     TEST                              0         0         2         3         0         0         0         0         5
+     HARDSHIP                          0         0        14         3         0         0         0         0        17
+     SCHOOL                            0         0         7         1         0         0         0         0         8
+     PENDING                           0         0         1         0         0         0         0         0         1
+  SURRENDER                                                                                                             
+     NORMAL                         2216      1258    428696      1814        24       613       291     30406    465318
+     NONE                              4         5       113       110       876         0         0         1      1109
+     INSTRUCTION                      93       204     17824      1878         8         1         0        12     20020
+     APPLICATION                       3         0        44         2         1         0         0         0        50
+     TEMPORARY                         4         5        63       103         0         2         0         9       186
+     TEST                              0         0         0         3         0         0         0         1         4
+     HARDSHIP                          1         0        41         3         0         0         0         7        52
+     SCHOOL                            0         0        18         0         0         0         0         0        18
+     PENDING                           0         1         4         1         1         0         0         0         7
+     HANDICAPPED                       0         0         1         0         0         0         0         0         1
+  CLEARED                                                                                                               
+     NORMAL                          121        38     30343       274       682        25         7      1190     32680
+     NONE                              2         1       379        57    293443         0         0         4    293886
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  14   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL REAL ID CARD                                                                              
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  CLEARED                                                                                                               
+     INSTRUCTION                       1         3      1047       206         3         1         0         2      1263
+     APPLICATION                       1         0      1094         3        40         0         0         4      1142
+     TEMPORARY                         0         0       114        23         1         0         0         7       145
+     TEST                              0         0         7         2         0         0         0         0         9
+     HARDSHIP                          0         0        11         1         0         0         0         0        12
+     SCHOOL                            0         0         1         0         0         0         0         0         1
+     PENDING                           0         0         4         1         4         0         0         0         9
+  DECEASED                                                                                                              
+     NORMAL                          571       268    110069        62         4       186        71      6182    117413
+     NONE                              2         0        15        20      7836         0         0         1      7874
+     INSTRUCTION                       6        12      1342       267         0         0         0         5      1632
+     APPLICATION                       0         0        88         1         1         0         0         0        90
+     TEMPORARY                         1         0       137        15         0         1         0        12       166
+     TEST                              0         0         3         0         0         0         0         0         3
+     HARDSHIP                          0         0        20         0         0         0         0         0        20
+  SUSPENDED                                                                                                             
+     NORMAL                          124        50     33712       273         6         8         5      1021     35199
+     NONE                              0         0        19        12     10825         0         0         0     10856
+     INSTRUCTION                       0         7      2577       279         1         0         0         5      2869
+     APPLICATION                       1         0        39         0         4         0         0         0        44
+     TEMPORARY                         0         0        30        13         0         0         0         3        46
+     TEST                              0         0         2         0         0         0         0         0         2
+     HARDSHIP                          0         0        21         2         0         0         0         2        25
+     SCHOOL                            0         0         1         0         0         0         0         0         1
+  REVOKED                                                                                                               
+     NORMAL                          105        30     16780       229         4        11         4       593     17756
+     NONE                              0         0         9         4     35910         0         0         0     35923
+     INSTRUCTION                       2         4       961       151         0         0         0         1      1119
+     APPLICATION                       1         0        58         0         3         0         0         0        62
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  15   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL REAL ID CARD                                                                              
+0LICENSE STATUS                CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+      PERMIT TYPE              --------- --------- --------- --------- --------- --------- --------- --------- ---------
+  REVOKED                                                                                                               
+     TEMPORARY                         3         3       840        65         0         0         1        46       958
+     TEST                              0         0         3         0         0         0         0         0         3
+     HARDSHIP                          0         0        10         1         0         0         0         0        11
+  PENDING                                                                                                               
+     NORMAL                            0         0         1         4         0         0         0         0         5
+     NONE                              0         0         0         1     85077         0         0         0     85078
+     INSTRUCTION                       0         0         1         1         0         0         0         0         2
+     PENDING                           0         0         0         0         1         0         0         0         1
+  CANCELLED                                                                                                             
+     NORMAL                           29         9      4788        69         0         2         1       181      5079
+     NONE                              0         0         5         7       638         0         0         0       650
+     INSTRUCTION                       0         0       428        35         0         0         0         1       464
+     APPLICATION                       0         0         3         0         0         0         0         0         3
+     TEMPORARY                         0         0         3         2         0         0         0         0         5
+     HARDSHIP                          0         0         1         0         0         0         0         0         1
+  DENIED                                                                                                                
+     NORMAL                            3         0       267         0         6         0         0        12       288
+     NONE                              1         0         1         0     16719         0         0         0     16721
+     INSTRUCTION                       0         1        66         3         1         0         0         0        71
+     APPLICATION                       7         2       551         1        14         0         0         5       580
+     TEST                              0         0         1         0         0         0         0         0         1
+  OTHER                                                                                                                 
+     NORMAL                            4         2        39        11         3         0         0         0        59
+     NONE                              1         2        10        25        13         0         0         0        51
+     INSTRUCTION                       1         1         1         7         0         0         0         0        10
+     APPLICATION                       6         0        84         0         3         0         0         1        94
+     TEST                              0         1        41         1         1         0         0         0        44
+     PENDING                           0         0         0         1         0         0         0         0         1
+0TOTAL                              8601      6540   2558941     12411    452793      2908      2040    172069   3216303
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  16   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL                                                                                               
+0VALID LICENSE RESTRICTIONS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ B  Corrective lenses               2303       893        96         9         0       681       164         5      4151
+ D  Prosthetic Aid                     5         0         0         0         0         0         0         0         5
+ E  Auto trans CMV wgt only          334      1097       221         0         0         0         0         0      1652
+ F  Outside Mirrors                   23         6         0         0         0         7         3         0        39
+ G  Daylight driving only              1         0         0        16         0         0         0         0        17
+ JA Must carry detail form             5         2         0         0         0         2         0         0         9
+ JD Drive Fire Equip NCMV A            0         6         1         0         0         0         0         0         7
+ JI Drive NCMV A Rec Veh               0         0         1         0         0         0         0         0         1
+ JM Class A tow car only               3         0         0         0         0         0         0         0         3
+ JN Instruction Permit               892       262         7        16         0         0         0         0      1177
+ JP Tow veh > 10,000 lb Class          0         6         0         0         0         0         0         0         6
+ JU Phys exam                       6069      1634       150         4         0         5         0         0      7862
+ JV NV Med Waiver                      8         1         0         0         0         0         0         0         9
+ JW Dir visual sup 21 + yrs            0         0         0        16         0         0         0         0        16
+ JX No Air Brakes - NCDL               0         2         1         0         0         0         0         0         3
+ JY Must carry valid NV NCDL/C       891       261         7         0         0         0         0         0      1159
+ K  CMV intrastate only              195        74         3         0         0         0         0         0       272
+ L  No air brakes CMV Wgt Only        40        56       230         0         0         0         0         0       326
+ M  No Class A Psngr veh             677      1231         0         0         0         0         0         0      1908
+ N  No Class A/B Psngr veh           110        22       200         0         0         0         0         0       332
+ O  No tractor trailer CMV wgt        86         0         0         0         0         0         0         0        86
+ P  No Psngr in CMV bus               12       181         5         0         0         0         0         0       198
+ R  No Plac HazMat or Psngrs          55         5         1         0         0         0         0         0        61
+ S  No Psngrs                          0         0         0        16         0         0         0         0        16
+ U  MC not to exceed 90 cc             0         0         0         1         0         0         0         0         1
+ V  Med Variance Docs Reqd             2         0         0         0         0         0         0         0         2
+ W  Farm Waiver                        1         0         0         0         0         0         0         0         1
+ X  No cargo in CMV tank veh         158        40         1         0         0         0         0         0       199
+ Y  Ignition interlock                 3         2         0         0         0         1         0         0         6
+ 2  Hearing aid                       79        20         4         1         0         8         1         0       113
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  17   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL                                                                                               
+0VALID LICENSE RESTRICTIONS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ 3  No fwy driving                     0         0         0        16         0         0         0         0        16
+ 7  Yearly medical Letter             20         5         0         0         0         0         0         0        25
+0TOTAL                             11972      5806       928        95         0       704       168         5     19678
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  18   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL                                                                                           
+0VALID LICENSE RESTRICTIONS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ A  Auto Trans                         8        17       483         0         0         0         0         0       508
+ B  Corrective lenses                676       478    187950       133         0       230       121     11369    200957
+ C  Mechanical/Adaptive Device         1         0       208         0         0         0         0         0       209
+ D  Prosthetic Aid                     3         0        34         2         0         0         0         2        41
+ E  Auto trans CMV wgt only           82       257         6         0         0         0         0         0       345
+ F  Outside Mirrors                   57        27      8280         9         0        14        10       480      8877
+ G  Daylight driving only              3         1       306       190         0         1         0        15       516
+ JA Must carry detail form             1        14        37         2         0         1         1         4        60
+ JC Eye test every 6 Months            0         0         1         0         0         0         0         0         1
+ JF Must have wink mirrors             0         0         2         0         0         0         0         0         2
+ JK Left foot accelerator              0         0        25         0         0         0         0         0        25
+ JN Instruction Permit                17        22      3040       164         0         0         0        22      3265
+ JT Speed 45 MPH or less               0         0        20         0         0         0         0         0        20
+ JU Phys exam                          0         0         1         0         0         0         0         0         1
+ JW Dir visual sup 21 + yrs            0         0         1       190         0         0         0         0       191
+ JX No Air Brakes - NCDL              54         7         0         0         0         0         0         0        61
+ L  No air brakes CMV Wgt Only         4         1         0         0         0         0         0         0         5
+ Q  Moped                              0         0         0        16         0         0         0         0        16
+ S  No Psngrs                          0         0         1       190         0         0         0         0       191
+ U  MC not to exceed 90 cc             0         0         0        39         0         0         0         0        39
+ Y  Ignition interlock                 1         3       883         1         0         2         0        14       904
+ 1  Telescopic device                  0         0         9         0         0         0         0         0         9
+ 2  Hearing aid                       37        22      1131         5         0        10         1        54      1260
+ 3  No fwy driving                     0         0         0       183         0         0         0         0       183
+ 4  Grip/Power steering wheel          1         0       174         0         0         0         0         0       175
+ 5  Directional signals                1         0       137         0         0         0         0         0       138
+ 6  Yearly vision exam                 2         0        64         0         0         0         0         4        70
+ 7  Yearly medical Letter              3         3       329         2         0         0         1        13       351
+ 8  Yearly drive test                  0         0        30         0         0         0         0         0        30
+ 9  Seat cushion/Auto Seat             0         0       149         0         0         0         0         0       149
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  19   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL                                                                                           
+0VALID LICENSE RESTRICTIONS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ ?? UNKNOWN                            0         0         5         0         0         0         0         0         5
+0TOTAL                               951       852    203306      1126         0       258       134     11977    218604
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  20   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: DRIVER AUTHORIZATON CARD                                                                                 
+0VALID LICENSE RESTRICTIONS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ A  Auto Trans                         0         0        16         0         0         0         0         0        16
+ B  Corrective lenses                  3         3     15764         1         0         0         0       107     15878
+ C  Mechanical/Adaptive Device         0         0        12         0         0         0         0         0        12
+ D  Prosthetic Aid                     0         0         2         0         0         0         0         0         2
+ E  Auto trans CMV wgt only            0         0         1         0         0         0         0         0         1
+ F  Outside Mirrors                    0         0      1221         0         0         0         0         7      1228
+ G  Daylight driving only              0         0        37        16         0         0         0         0        53
+ JA Must carry detail form             0         0         2         0         0         0         0         0         2
+ JN Instruction Permit                 0         6      8384        10         0         0         0         5      8405
+ JT Speed 45 MPH or less               0         0         1         0         0         0         0         0         1
+ JW Dir visual sup 21 + yrs            0         0         0        16         0         0         0         0        16
+ S  No Psngrs                          0         0         0        16         0         0         0         0        16
+ T  To-from school only                0         0         1         0         0         0         0         0         1
+ Y  Ignition interlock                 0         0       132         0         0         0         0         1       133
+ 1  Telescopic device                  0         0         1         0         0         0         0         0         1
+ 2  Hearing aid                        0         0        10         0         0         0         0         0        10
+ 3  No fwy driving                     0         0         0        15         0         0         0         0        15
+ 4  Grip/Power steering wheel          0         0         8         0         0         0         0         0         8
+ 5  Directional signals                0         0         6         0         0         0         0         0         6
+ 6  Yearly vision exam                 0         0         2         0         0         0         0         0         2
+ 7  Yearly medical Letter              0         0        11         0         0         0         0         0        11
+ 8  Yearly drive test                  0         0         1         0         0         0         0         0         1
+ 9  Seat cushion/Auto Seat             0         0        22         0         0         0         0         0        22
+0TOTAL                                 3         9     25634        74         0         0         0       120     25840
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  21   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL REAL ID CARD                                                                                  
+0VALID LICENSE RESTRICTIONS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ A  Auto Trans                         6        10         0         0         0         0         0         0        16
+ B  Corrective lenses              11977      4212       323        12         0      3928       961        56     21469
+ D  Prosthetic Aid                    14         3         0         0         0         0         0         0        17
+ E  Auto trans CMV wgt only         5857      7395       716         0         0         0         0         0     13968
+ F  Outside Mirrors                   86        23         1         0         0        21         6         0       137
+ G  Daylight driving only              0         0         0         1         0         0         0         0         1
+ JA Must carry detail form            23         8         0         5         0         2         1         0        39
+ JD Drive Fire Equip NCMV A            0        54         0         0         0         0         0         0        54
+ JI Drive NCMV A Rec Veh               0        23         0         0         0         0         0         0        23
+ JM Class A tow car only               7         0         0         0         0         0         0         0         7
+ JN Instruction Permit               230        65         3         1         0         0         0         0       299
+ JP Tow veh > 10,000 lb Class          0        16         0         0         0         0         0         0        16
+ JT Speed 45 MPH or less               1         0         0         0         0         0         0         0         1
+ JU Phys exam                      37752      8796       478         7         0        34         5         0     47072
+ JV NV Med Waiver                     12         5         0         0         0         0         0         0        17
+ JW Dir visual sup 21 + yrs            0         0         0         1         0         0         0         0         1
+ JX No Air Brakes - NCDL               1         0         1         0         0         0         0         0         2
+ JY Must carry valid NV NCDL/C       228        65         2         0         0         0         0         0       295
+ K  CMV intrastate only              456       180        13         0         0         0         0         0       649
+ L  No air brakes CMV Wgt Only       193       240       766         0         0         0         0         0      1199
+ M  No Class A Psngr veh            4339      7773         1         0         0         0         0         0     12113
+ N  No Class A/B Psngr veh           459       108       673         0         0         0         0         0      1240
+ O  No tractor trailer CMV wgt       663         0         0         0         0         0         0         0       663
+ P  No Psngr in CMV bus                2        33         1         0         0         0         0         0        36
+ Q  Moped                              0         0         0         1         0         0         0         0         1
+ R  No Plac HazMat or Psngrs         163        19         0         0         0         0         0         0       182
+ S  No Psngrs                          0         0         0         1         0         0         0         0         1
+ U  MC not to exceed 90 cc             0         0         0         2         0         0         0         0         2
+ V  Med Variance Docs Reqd            17         2         0         0         0         0         0         0        19
+ X  No cargo in CMV tank veh          40        11         0         0         0         0         0         0        51
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  22   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL REAL ID CARD                                                                                  
+0VALID LICENSE RESTRICTIONS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ Y  Ignition interlock                10         1         0         0         0         3         1         0        15
+ 2  Hearing aid                      386       104        11         3         0        21         5         0       530
+ 3  No fwy driving                     0         0         0         1         0         0         0         0         1
+ 4  Grip/Power steering wheel          1         0         0         0         0         0         0         0         1
+ 5  Directional signals                1         0         0         0         0         0         0         0         1
+ 6  Yearly vision exam                 1         0         0         0         0         0         0         0         1
+ 7  Yearly medical Letter             58        14         2         0         0         1         0         0        75
+ 9  Seat cushion/Auto Seat             1         0         0         0         0         0         0         0         1
+ ?? UNKNOWN                            1         0         0         0         0         0         0         0         1
+0TOTAL                             62985     29160      2991        35         0      4010       979        56    100216
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  23   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON COMMERCIAL REAL ID CARD                                                                              
+0VALID LICENSE RESTRICTIONS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ A  Auto Trans                        10        67       745         0         0         0         0         0       822
+ B  Corrective lenses               1371      1320    634972       256         0       619       499     41109    680146
+ C  Mechanical/Adaptive Device         2         3       382         0         0         0         0         0       387
+ D  Prosthetic Aid                     2         2        54         2         0         0         0         3        63
+ E  Auto trans CMV wgt only          403      1121        25         0         0         0         0         0      1549
+ F  Outside Mirrors                   76        54     19154        30         0        31        16      1180     20541
+ G  Daylight driving only              0         1       717        38         0         2         0        19       777
+ JA Must carry detail form             1        72        56         3         0         2        40         1       175
+ JB Drive test every 6 months          0         0         2         0         0         0         0         0         2
+ JF Must have wink mirrors             0         0         4         0         0         0         0         0         4
+ JG Motorcycle w-Sidecar               0         0         0         1         0         0         0         0         1
+ JK Left foot accelerator              0         0        57         0         0         0         0         0        57
+ JL Trimobile                          0         0         0         5         0         0         0         0         5
+ JN Instruction Permit                 5        22     54565        38         0         0         0         0     54630
+ JP Tow veh > 10,000 lb Class          0         6         0         0         0         0         0         0         6
+ JR 3 wheel MC w/1 rear pwr wh         0         0         0        17         0         0         0         0        17
+ JT Speed 45 MPH or less               0         0        39         1         0         0         0         1        41
+ JU Phys exam                          2         0         0         0         0         0         0         0         2
+ JW Dir visual sup 21 + yrs            0         0         7        44         0         0         0         0        51
+ JX No Air Brakes - NCDL             234        61         1         0         0         0         0         0       296
+ L  No air brakes CMV Wgt Only        13         2         0         0         0         0         0         0        15
+ Q  Moped                              0         0         0        17         0         0         0         0        17
+ S  No Psngrs                          0         0         6        43         0         0         0         0        49
+ T  To-from school only                0         0         6         0         0         0         0         0         6
+ U  MC not to exceed 90 cc             0         0         0        66         0         0         0         0        66
+ Y  Ignition interlock                 6         3      1884         2         0         1         0        54      1950
+ 1  Telescopic device                  0         0        29         0         0         0         0         1        30
+ 2  Hearing aid                       81        45      2462        39         0         7         2       182      2818
+ 3  No fwy driving                     0         0         5        32         0         0         0         0        37
+ 4  Grip/Power steering wheel          0         2       327         0         0         0         0         0       329
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  24   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON COMMERCIAL REAL ID CARD                                                                              
+0VALID LICENSE RESTRICTIONS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ 5  Directional signals                1         3       193         0         0         0         0         0       197
+ 6  Yearly vision exam                 0         0       126         0         0         2         0         7       135
+ 7  Yearly medical Letter              6         5       796         3         0         1         0        33       844
+ 8  Yearly drive test                  0         0        59         0         0         0         0         2        61
+ 9  Seat cushion/Auto Seat             0         0       498         0         0         0         0         0       498
+ ?? UNKNOWN                            0         0         7         0         0         0         0         0         7
+0TOTAL                              2213      2789    717178       637         0       665       557     42592    766631
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  25   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL                                                                                               
+0VALID LICENSE ENDORSEMENTS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ H  Hazardous materials               37         8         5         0         0         0         0         0        50
+ J  May tow veh > 10,000 lbs           0         9         0         0         0         0         0         0         9
+ N  Tankers                         4232       478         2         0         0         0         0         0      4712
+ P  Passengers                       828      1507       227         0         0         0         0         0      2562
+ S  School Bus                       166       659         1         0         0         0         0         0       826
+ T  Double/Triple trailers          4704         2         0         0         0         0         0         0      4706
+ X  Haz Mat/Tankers                  634        49         1         0         0         0         0         0       684
+0TOTAL                             10601      2712       236         0         0         0         0         0     13549
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  26   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON-COMMERCIAL                                                                                           
+0VALID LICENSE ENDORSEMENTS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ F  Fire/Farm/Military                93       342       361         0         0         0         0         0       796
+ G  Autonomous Vehicle Operato         0         0        29         0         0         0         0         0        29
+ J  May tow veh > 10,000 lbs          94        16       371         0         0         0         0         0       481
+0TOTAL                               187       358       761         0         0         0         0         0      1306
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  27   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: DRIVER AUTHORIZATION CARD                                                                                
+0VALID LICENSE ENDORSEMENTS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ F  Fire/Farm/Military                 0         0         3         0         0         0         0         0         3
+ G  Autonomous Vehicle Operato         0         0        13         0         0         0         0         0        13
+ J  May tow veh > 10,000 lbs           1         0         3         0         0         0         0         0         4
+0TOTAL                                 1         0        19         0         0         0         0         0        20
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  28   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: COMMERCIAL REAL ID CARD                                                                                  
+0VALID LICENSE ENDORSEMENTS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ G  Autonomous Vehicle Operato         8         2         0         0         0         0         0         0        10
+ H  Hazardous materials              440        49        60         0         0         0         0         0       549
+ J  May tow veh > 10,000 lbs           0        26         3         0         0         0         0         0        29
+ N  Tankers                        19658      2056         5         0         0         0         0         0     21719
+ P  Passengers                      4959      8492       723         0         0         0         0         0     14174
+ S  School Bus                      1213      4011         7         0         0         0         0         0      5231
+ T  Double/Triple trailers         23922         5         0         0         0         0         0         0     23927
+ X  Haz Mat/Tankers                 6889       341         8         0         0         0         0         0      7238
+0TOTAL                             57089     14982       806         0         0         0         0         0     72877
+1                                                                                                                       
+0PROGRAM: AZBD185A                            DEPARTMENT OF MOTOR VEHICLES                                  PAGE:  29   
+                                           DRIVERS LICENSE STATISTICAL REPORT                                           
+0RUN DATE    : 2023-07-02                                                                                               
+ AS-OF DATE  : 2023-06-30                                                                                               
+ LICENSE TYPE: NON COMMERCIAL REAL ID CARD                                                                              
+0VALID LICENSE ENDORSEMENTS    CLASS   A CLASS   B CLASS   C CLASS   M CLASS   ? CLASS A&M CLASS B&M CLASS C&M     TOTAL
+                               --------- --------- --------- --------- --------- --------- --------- --------- ---------
+ F  Fire/Farm/Military               320      1488      1246         0         0         0         0         0      3054
+ G  Autonomous Vehicle Operato         0         1        50         0         0         0         0         0        51
+ J  May tow veh > 10,000 lbs         161        46       856         0         0         0         0         0      1063
+0TOTAL                               481      1535      2152         0         0         0         0         0      4168
+0*****END OF REPORT                                                                                                     
