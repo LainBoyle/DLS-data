@@ -10,8 +10,8 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_ROOT = BASE_DIR.parent
 
 #paths
-INPUT_EXCEL= DATA_ROOT / "Colorado" / "Data" / "2022_DeptActionsCORA.xlsx"
-OUTPUT_CSV= DATA_ROOT / "Colorado" / "Data" / "2022_DeptActionsCORAEdited.xlsx"
+DATA_DIR = DATA_ROOT / "Colorado" / "Data"
+OUTPUT_CSV = DATA_ROOT / "Outputs" / "Colorado.csv"
 
 def _clean_cols(df):
     #normalizes column names
@@ -86,13 +86,77 @@ def build_month_reason_pivot(input_excel:str)->pd.DataFrame:
     out=out.reset_index(drop=True)
     return out
 
-#run
-df_out = build_month_reason_pivot(INPUT_EXCEL)
-df_out.to_csv(OUTPUT_CSV, index=False)
+#find all xlsx files in Colorado/Data
+xlsx_files = sorted([f for f in DATA_DIR.glob("*.xlsx") if f.is_file()])
 
-#paths
-INPUT_CSV = DATA_ROOT / "Colorado" / "Data" / "2022_DeptActionsCORAEdited.xlsx"
-OUTPUT_CSV = DATA_ROOT / "Outputs" / "Colorado.csv"
+if not xlsx_files:
+    raise FileNotFoundError(f"No .xlsx files found in {DATA_DIR}")
+
+print(f"Found {len(xlsx_files)} Excel file(s) to process")
+
+#process each file and collect pivot tables
+all_pivots = []
+for xlsx_file in xlsx_files:
+    print(f"Processing {xlsx_file.name}...")
+    df_pivot = build_month_reason_pivot(str(xlsx_file))
+    #remove the "total" row from individual files (we'll recalculate at the end)
+    df_pivot = df_pivot[df_pivot["time"] != "total"].copy()
+    #normalize all column names to strings, handling all edge cases
+    new_cols = []
+    for c in df_pivot.columns:
+        try:
+            if c is None or (isinstance(c, float) and pd.isna(c)):
+                new_cols.append("nan")
+            else:
+                new_cols.append(str(c))
+        except:
+            new_cols.append("nan")
+    df_pivot.columns = new_cols
+    all_pivots.append(df_pivot)
+
+#combine all pivot tables
+#get all unique columns across all files (already normalized to strings)
+all_columns_set = set()
+for df in all_pivots:
+    #ensure all columns are strings
+    for col in df.columns:
+        all_columns_set.add(str(col))
+
+#ensure "time" is first, sort the rest
+#explicitly convert all to strings and filter
+all_columns_list = [str(c) for c in all_columns_set if str(c) != "time"]
+all_columns_list.sort()  # sort in place
+all_columns = ["time"] + all_columns_list
+
+#combine all dataframes, filling missing columns with 0
+combined_df = pd.concat(all_pivots, ignore_index=True)
+
+#reindex to include all columns, filling missing with 0
+#(column names are already normalized to strings)
+for col in all_columns:
+    if col not in combined_df.columns:
+        combined_df[col] = 0
+
+#reorder columns
+combined_df = combined_df[all_columns]
+
+#sort by time (excluding "total" rows for now)
+combined_df = combined_df.sort_values("time").reset_index(drop=True)
+
+#add a final total row that sums all months
+#exclude "time" column from sum calculation
+numeric_cols = [c for c in combined_df.columns if c != "time" and combined_df[c].dtype in [int, float, 'int64', 'float64']]
+totals_data = {col: combined_df[col].sum() for col in numeric_cols}
+totals_data["time"] = "total"
+totals_row = pd.DataFrame([totals_data])
+#ensure all columns are present, filling missing with 0
+for col in all_columns:
+    if col not in totals_row.columns:
+        totals_row[col] = 0
+totals_row = totals_row[all_columns]
+
+#combine with totals row
+df_out = pd.concat([combined_df, totals_row], ignore_index=True)
 
 #explicit overrides for codes
 EXPLICIT_CODE_CATEGORY = {
@@ -194,13 +258,11 @@ def infer_category_for_column(col_name: str) -> str:
         return EXPLICIT_CODE_CATEGORY[code]
     return infer_category_from_text(col_name)
 
-#read the input pivot (month × code)
-df = pd.read_csv(INPUT_CSV)
-
+#categorize and aggregate the combined pivot data
 #identify code level columns
 non_code_cols = {"time", "total"}
 code_cols = [
-    c for c in df.columns
+    c for c in df_out.columns
     if c not in non_code_cols and not str(c).startswith("Unnamed")
 ]
 
@@ -208,10 +270,10 @@ code_cols = [
 col_to_category = {col: infer_category_for_column(col) for col in code_cols}
 
 #prepare output
-if "time" in df.columns:
-    out = df[["time"]].copy()
+if "time" in df_out.columns:
+    out = df_out[["time"]].copy()
 else:
-    out = pd.DataFrame(index=df.index)
+    out = pd.DataFrame(index=df_out.index)
 
 categories = ["FTP", "FTA", "road_safety", "Other"]
 
@@ -219,20 +281,21 @@ categories = ["FTP", "FTA", "road_safety", "Other"]
 for cat in categories:
     cat_cols = [col for col, c in col_to_category.items() if c == cat]
     if cat_cols:
-        out[cat] = df[cat_cols].sum(axis=1)
+        out[cat] = df_out[cat_cols].sum(axis=1)
     else:
         out[cat] = 0
 
 #compute total between the different categories
 out["total"] = out[categories].sum(axis=1)
 
-#categorized output
-out.to_csv(OUTPUT_CSV, index=False)
+#convert all numeric columns to integers (removes .0 from CSV output)
+for col in categories + ["total"]:
+    #fill any NaN with 0, then convert to int
+    out[col] = pd.to_numeric(out[col], errors='coerce').fillna(0).astype(int)
 
-# delete temporary edited pivot file
-edited_path = DATA_ROOT / "Colorado" / "Data" / "2022_DeptActionsCORAEdited.xlsx"
-try:
-    if edited_path.exists():
-        edited_path.unlink()
-except Exception as e:
-    print(f"warning: could not delete {edited_path}: {e}")
+#ensure output directory exists
+OUTPUT_CSV.parent.mkdir(parents=True, exist_ok=True)
+
+#categorized output - use float_format to ensure integers are written without .0
+out.to_csv(OUTPUT_CSV, index=False, float_format='%.0f')
+print(f"Output saved to {OUTPUT_CSV}")
