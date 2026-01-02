@@ -1,0 +1,26 @@
+State,	Enacted Date,	Bill Number,	Effective Date,	Failure to Pay,	Failure to Appear
+Arizona,	4/2021,	SB 1551,	9/2021,	Partial,	—
+Arkansas,	4/2021,	SB 513,	1/2022,	Partial,	Procedural
+California, 	6/2017,	AB 103,	6/2017,	Full,	—
+Colorado,	6/2021,	HB21-1314,	1/2022,	Full,	Full
+Delaware,	10/2022,	HB 244,	4/2023,	Full,	—
+Dist. of Columbia,	9/2018,	SB 10,	10/2018,	Full,	Full 
+Hawaii,	9/2020,	HB 2750, 	9/2020,	Full,	—
+Idaho,	3/2018,	HB 599,	7/2018,	Full,	—
+Illinois,	1/2020,	SB 1786,	7/2020,	Partial,	—
+Indiana,	4/2021,	HB 1199,	12/2021,	Partial,	Full
+Maine,	7/2018,	LD 1190,	12/2018, Partial,	—
+Maryland,	5/2020,	SB 234,	10/2020,	Partial,	—
+Michigan,	1/2021,	HB 5846,	10/2021,	Full,	Full
+Minnesota,	6/2021,	HF 10,	1/2022,	Full,	Partial
+Mississippi,	4/2019,	HB 1352,	1/2017,	Full,	Full
+Montana,	5/2019,	HB 217,	5/2019,	Full,	—
+Nevada,	6/2021,	AB 116,	10/2021,	Full,	Partial
+New Mexico,	6/2023,	SB 47,	6/2023,	Full,	Full
+New York,	12/2020,	S 5348, 	6/2021,	Full,	Procedural
+Oregon,	6/2020,	HB 4210,	10/2020,	Full,	—
+Texas,	6/2019,	HB 2048,	9/2019,	Partial,	—
+Utah,	3/2021,	HB 143,	5/2021,	Full,	Partial
+Vermont,	5/2016,	H 571,	7/2016,	Partial,	—
+Virginia,	5/2019,	HB 1700,	7/2019,	Partial,	—
+West Virginia,	5/2020,	HB 4958,	7/2020,	Full,	—
