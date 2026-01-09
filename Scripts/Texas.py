@@ -28,40 +28,162 @@ def infer_category_for_texas_action(action_str):
     
     action = str(action_str).strip().upper()
     
-    # Child support - check BEFORE FTP to separate from other fees
-    if "CHILD SUPPORT" in action:
+    # Child support - check FIRST to separate from other fees
+    if "CHILD SUPPORT" in action or "DELINQUENT CHILD SUPPORT" in action:
         return "Child_Support"
     
-    # Failure to appear (FTA)
-    if any(kw in action for kw in ["FAILURE TO APPEAR", "FAIL TO APPEAR", "FTA", "OUT-OF-STATE FTA"]):
+    # Failure to appear (FTA) - check before FTP
+    if any(kw in action for kw in ["FAILURE TO APPEAR", "FAIL TO APPEAR", "FTA", 
+                                    "OUT-OF-STATE FTA", "OUT OF STATE FTA"]):
         return "FTA"
     
-    # Failure to pay/comply (FTP) - exclude child support
-    if any(kw in action for kw in ["FAILURE TO COMPLY", "FAIL TO COMPLY", "FTC", "OUT-OF STATE FTC",
-                                    "NO LIABILITY INSURANCE", "INSURANCE", "FINANCIAL RESPONSIBILITY"]):
+    # Failure to pay/comply (FTP) - insurance, surcharges, judgments, installment agreements
+    if any(kw in action for kw in [
+        # Insurance related
+        "NO LIABILITY INSURANCE", "CANCELLED INSURANCE", "INSURANCE", 
+        "FINANCIAL RESPONSIBILITY", "SR SUSPENSION",
+        # Financial obligations
+        "SURCHARGE DUE", "DEFAULT INSTALLMENT AGREEMENT", "DEFAULTED INSTALLMENT",
+        "LIABILITY JUDGMENT", "OUT OF STATE JUDGMENT", "OUT-OF STATE JUDGMENT",
+        # Failure to comply/pay
+        "FAILURE TO COMPLY", "FAIL TO COMPLY", "FTC", "OUT-OF STATE FTC", "OUT OF STATE FTC",
+        "OUT-OF-STATE FTP", "OUT OF STATE FTP",
+        # DHS overpayment
+        "DHS OVERPAYMENT",
+        # Denied renewal for financial reasons
+        "DENIED RENEWAL OUT-OF STATE FTC", "DENIED RENEWAL OUT-OF-STATE FTP"
+    ]):
         return "FTP"
     
-    # Road safety - DUI/DWI and alcohol related
-    if any(kw in action for kw in ["ALR", "ADMINISTRATIVE LICENSE REVOCATION", "DWI", "DUI", 
-                                    "DRIVING WHILE INTOXICATED", "INTOXICATED", "ALCOHOL",
-                                    "BAC", "CHEMICAL TEST", "REFUSAL", "UNDER 21"]):
+    # Road safety - ALR (Administrative License Revocation) - all alcohol/drug related
+    if "ALR" in action:
+        return "road_safety"
+    
+    # Road safety - DUI/DWI and intoxication related
+    if any(kw in action for kw in [
+        "DWI", "DUI", "DRIVING WHILE INTOXICATED", "INTOXICATED", "INTOXICATION",
+        "ALCOHOL", "BAC", "CHEMICAL TEST", "REFUSAL", "UNDER 21",
+        "BOATING WHILE INTOXICATED", "BOATING REFUSAL", "BOATING FAILURE",
+        "FLYING WHILE INTOXICATED", "AMUSEMENT RIDE INTOXICATION",
+        "INTOXICATION ASSAULT", "INTOXICATION MANSLAUGHTER",
+        "ADMINISTRATIVE PER SE", "IMPLIED CONSENT"
+    ]):
         return "road_safety"
     
     # Road safety - drug related
-    if any(kw in action for kw in ["DRUG", "DWI EDUCATION PROGRAM", "DRUG EDUCATION PROGRAM"]):
+    if any(kw in action for kw in [
+        "DRUG", "CONTROLLED SUBSTANCE", "DANGEROUS DRUG", "DRUG OFFENSE",
+        "DWI EDUCATION PROGRAM", "DRUG EDUCATION PROGRAM"
+    ]):
         return "road_safety"
     
-    # Road safety - serious traffic violations
-    if any(kw in action for kw in ["SERIOUS TRAFFIC VIOLATIONS", "HABITUAL VIOLATOR", 
-                                    "REPEAT OFFENDER", "CRASH"]):
+    # Road safety - serious traffic violations and dangerous driving
+    if any(kw in action for kw in [
+        "SERIOUS TRAFFIC VIOLATIONS", "HABITUAL VIOLATOR", "HARDSHIP VIOLATOR",
+        "REPEAT OFFENDER", "REPEATED", "SUBSEQUENT",
+        "CRASH SERIOUS", "CRASH", "FATAL ACC", "INJ ACC", "PDO ACC",
+        "FSRA", "LVSC", "VEHICLE MANSLAUGHTER", "CRIMINAL NEGLIGENT HOMICIDE",
+        "MURDER WITH MOTOR VEHICLE"
+    ]):
         return "road_safety"
     
-    # Road safety - other violations
-    if any(kw in action for kw in ["VIOLATE RESTRICTION", "RESTRICTION", "PROHIBITION"]):
+    # Road safety - fleeing and evasion
+    if any(kw in action for kw in [
+        "FLEE POLICE", "EVADE ARREST", "EVADE DETENTION"
+    ]):
         return "road_safety"
     
-    # Medical - Other
-    if any(kw in action for kw in ["MEDICAL", "INCAPABLE", "TEST REQUIRED"]):
+    # Road safety - failure to stop/render aid
+    if any(kw in action for kw in [
+        "FAILURE TO STOP AND RENDER AID", "FAIL TO STOP", "FAIL TO SLOW",
+        "FAILED TO OBEY", "FAIL TO STOP FOR SCHOOL BUS"
+    ]):
+        return "road_safety"
+    
+    # Road safety - racing
+    if any(kw in action for kw in [
+        "RACING", "PROHIBITION RACING"
+    ]):
+        return "road_safety"
+    
+    # Road safety - violations of restrictions and prohibitions
+    if any(kw in action for kw in [
+        "VIOLATE RESTRICTION", "RESTRICTION", "PROHIBITION", "ORDER OF PROHIBITION"
+    ]):
+        return "road_safety"
+    
+    # Administrative cancellations - Other (check before CMV/CDL safety checks)
+    if "CANCELLED - CDL ONLY" in action or "CANCELLED - CLP ONLY" in action:
+        return "Other"
+    
+    # Road safety - CMV/CDL violations (commercial vehicle safety)
+    if any(kw in action for kw in [
+        "CMV", "CDL", "CLP", "COMMERCIAL", "HAZMAT", "OUT OF SERVICE",
+        "RAILROAD VIOLATION", "RR XING", "RR GATE", "INSUFFICIENT SPACE"
+    ]):
+        return "road_safety"
+    
+    # Road safety - driving while license invalid/suspended/revoked
+    if any(kw in action for kw in [
+        "DWLI", "DWLD", "DRIVING WHILE LICENSE", "DWL", "DRIVING WHILE LICENSE INVALID",
+        "DRIVING WHILE LICENSE SUSPENDED", "DRIVING WHILE LICENSE REVOKED",
+        "DRIVING WHILE LICENSE CANCELED", "DRIVING WHILE LICENSE DISQUALIFIED",
+        "DRIVING WHILE LICENSE WITHDRAWN"
+    ]):
+        return "road_safety"
+    
+    # Road safety - out of state convictions (traffic safety related)
+    if "OUT OF STATE CONVICTION" in action or "OUT-OF STATE CONVICTION" in action:
+        return "road_safety"
+    
+    # Road safety - out of state crash (safety related)
+    if "OUT OF STATE CRASH" in action or "OUT-OF STATE CRASH" in action:
+        return "road_safety"
+    
+    # Medical/incapable - Other (not road safety)
+    if any(kw in action for kw in [
+        "MEDICAL", "INCAPABLE", "TEST REQUIRED", "MEDICAL ADVISORY"
+    ]):
+        return "Other"
+    
+    # Cancellations and denials - Other (administrative)
+    if any(kw in action for kw in [
+        "CANCELLED - CDL ONLY", "CANCELLED - CLP ONLY",  # Administrative CDL/CLP cancellations
+        "CANCELLED", "DENY ISSUANCE", "DENIED RENEWAL"  # (but not FTA/FTP which are handled above)
+    ]):
+        return "Other"
+    
+    # Juvenile suspensions - Other (non-traffic)
+    if "JUVENILE" in action:
+        return "Other"
+    
+    # Minor violations (non-alcohol) - Other
+    if any(kw in action for kw in [
+        "MINOR LICENSE VIOLATION", "TOBACCO MINOR EDUCATION COURSE"  # (but not alcohol-related which is road_safety)
+    ]):
+        return "Other"
+    
+    # License/ID violations (non-safety) - Other
+    if any(kw in action for kw in [
+        "FALSIFICATION", "FICTITIOUS", "MISREPRESENTATION", "POSSESS DECEPTIVE",
+        "POSSESS MORE THAN ONE", "UNLAWFUL DISPLAY", "LEND/PERMIT USE"
+    ]):
+        return "Other"
+    
+    # Contempt - Other
+    if "CONTEMPT" in action:
+        return "Other"
+    
+    # Sex offender - Other (not traffic safety)
+    if "SEX OFFENDER" in action:
+        return "Other"
+    
+    # Section 521.319 - Other (administrative)
+    if "SECTION 521.319" in action:
+        return "Other"
+    
+    # NRVC - Other
+    if "NRVC" in action:
         return "Other"
     
     # Default to Other
