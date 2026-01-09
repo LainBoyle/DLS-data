@@ -12,17 +12,23 @@ DATA_DIR = DATA_ROOT / "New Mexico"
 OUTPUT_CSV = DATA_ROOT / "Outputs" / "NewMexico.csv"
 
 def infer_category_for_newmexico_action(action_code, description):
-    """Categorize New Mexico action codes into FTP, FTA, road_safety, Other"""
+    """Categorize New Mexico action codes into FTP, FTA, road_safety, Child_Support, Other"""
     code = str(action_code).strip().upper()
     desc = str(description).strip().upper() if pd.notna(description) else ""
     text = f"{code} {desc}"
+    
+    # Child support - check BEFORE FTP to separate from other fees
+    # Check for various formats: "CHILD SUPPORT", "CHILDSUPPORT", "CHILD-SUPPORT", etc.
+    if any(kw in text for kw in ['CHILD SUPPORT', 'CHILDSUPPORT', 'CHILD-SUPPORT', 'CHILD_SUPPORT', 
+                                  'CHLD SUPPORT', 'CHLDSUPPORT', 'CHLD SPRT']):
+        return "Child_Support"
     
     # Failure to appear (FTA)
     if code == 'D45' or 'FAIL APPEAR' in desc or 'FAILURE TO APPEAR' in desc or 'FTA' in text:
         return "FTA"
     
-    # Failure to pay/comply (FTP)
-    if code in ['D53', 'D51', 'D56'] or 'FAIL TO PAY' in desc or 'FAILURE TO PAY' in desc or 'FTP' in text:
+    # Failure to pay/comply (FTP) - exclude child support
+    if code in ['D53', 'D51', 'D56'] or ('FAIL TO PAY' in desc and 'CHILD SUPPORT' not in desc) or ('FAILURE TO PAY' in desc and 'CHILD SUPPORT' not in desc) or ('FTP' in text and 'CHILD SUPPORT' not in text):
         return "FTP"
     
     # DUI/alcohol related - road_safety
@@ -180,6 +186,7 @@ output_data = {
     'FTP': [0],
     'FTA': [0],
     'road_safety': [0],
+    'Child_Support': [0],
     'Other': [0],
     'total': [0]
 }
@@ -195,7 +202,7 @@ for _, row in agg_df.iterrows():
 output_df = pd.DataFrame(output_data)
 
 # Convert to integers
-for col in ['FTP', 'FTA', 'road_safety', 'Other', 'total']:
+for col in ['FTP', 'FTA', 'road_safety', 'Child_Support', 'Other', 'total']:
     output_df[col] = pd.to_numeric(output_df[col], errors='coerce').fillna(0).astype(int)
 
 # Ensure output directory exists

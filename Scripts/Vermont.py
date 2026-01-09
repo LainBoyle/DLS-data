@@ -58,11 +58,18 @@ def parse_vermont_date(date_str):
     return None
 
 def infer_category_for_vermont_code(suspension_code):
-    """Categorize Vermont suspension codes into FTP, FTA, road_safety, Other"""
+    """Categorize Vermont suspension codes into FTP, FTA, road_safety, Child_Support, Other"""
     if pd.isna(suspension_code):
         return "Other"
     
     code = str(suspension_code).strip().upper()
+    
+    # Child support - check BEFORE FTP to separate from other fees
+    # Check for various text formats (codes might contain descriptions)
+    code_upper = code.upper()
+    if any(kw in code_upper for kw in ["CHILD SUPPORT", "CHILDSUPPORT", "CHILD-SUPPORT", "CHILD_SUPPORT",
+                                        "CHLD SUPPORT", "CHLDSUPPORT", "CHLD SPRT"]):
+        return "Child_Support"
     
     # Failure to appear (FTA)
     # FAF = Failure to Appear (most common FTA code)
@@ -71,7 +78,7 @@ def infer_category_for_vermont_code(suspension_code):
     if code in ['FAF', 'FAM', 'FAD']:
         return "FTA"
     
-    # Failure to pay/comply (FTP)
+    # Failure to pay/comply (FTP) - exclude child support
     # FAP = Failure to Pay
     # UJ = Unsatisfied Judgment
     # MFC = likely related to financial compliance
@@ -188,7 +195,7 @@ agg_df = combined_df.groupby(['time', 'category'], dropna=False).size().reset_in
 pivot_df = agg_df.pivot(index='time', columns='category', values='count').fillna(0)
 
 # Ensure all categories are present
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 for cat in categories:
     if cat not in pivot_df.columns:
         pivot_df[cat] = 0

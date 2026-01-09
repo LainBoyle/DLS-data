@@ -13,16 +13,23 @@ DATA_DIR = DATA_ROOT / "Virginia"
 OUTPUT_CSV = DATA_ROOT / "Outputs" / "Virginia.csv"
 
 def infer_category_for_virginia_code(order_code, description):
-    """Categorize Virginia order codes into FTP, FTA, road_safety, Other"""
+    """Categorize Virginia order codes into FTP, FTA, road_safety, Child_Support, Other"""
     code = str(order_code).strip().upper()
     desc = str(description).strip().upper() if pd.notna(description) else ""
     text = f"{code} {desc}"
+    
+    # Child support - check BEFORE FTP to separate from other fees
+    # Check for various formats: "CHILD SUPPORT", "CHILDSUPPORT", "CHILD-SUPPORT", etc.
+    text_upper = text.upper()
+    if any(kw in text_upper for kw in ["CHILD SUPPORT", "CHILDSUPPORT", "CHILD-SUPPORT", "CHILD_SUPPORT",
+                                        "CHLD SUPPORT", "CHLDSUPPORT", "CHLD SPRT"]):
+        return "Child_Support"
     
     # Failure to appear (FTA)
     if any(kw in text for kw in ["FAIL TO APPEAR", "FAILURE TO APPEAR", "FTA", "CE02", "JG02", "DEFAULT JUDGMENT"]):
         return "FTA"
     
-    # Failure to pay/comply (FTP)
+    # Failure to pay/comply (FTP) - exclude child support
     if any(kw in text for kw in ["FAILURE TO PAY", "FAILED TO PAY", "FAIL TO PAY", "FTP", 
                                   "FAIL PAY", "JA01", "CV91", "FM01", "FM03", "JG01",
                                   "UNSATISFIED JUDGMENT", "JUDGMENT", "FINE", "COST", "FEE"]):
@@ -165,7 +172,7 @@ agg_df = combined_df.groupby(['time', 'category'], dropna=False)['count'].sum().
 pivot_df = agg_df.pivot(index='time', columns='category', values='count').fillna(0)
 
 # Ensure all categories are present
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 for cat in categories:
     if cat not in pivot_df.columns:
         pivot_df[cat] = 0

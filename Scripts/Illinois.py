@@ -34,7 +34,7 @@ def parse_month_year(month_year_str):
     return None, None
 
 def infer_category_for_illinois_code(code_str):
-    """Categorize Illinois authority codes into FTP, FTA, road_safety, Other"""
+    """Categorize Illinois authority codes into FTP, FTA, road_safety, Child_Support, Other"""
     if pd.isna(code_str):
         return "Other"
     
@@ -44,6 +44,10 @@ def infer_category_for_illinois_code(code_str):
     # 6-206 = Failure to pay/appear (FTP/FTA)
     # 6-205 = DUI and alcohol-related (road_safety)
     # 6-113, 6-119, etc. = Various other violations
+    
+    # Child support - check BEFORE FTP to separate from other fees
+    if "CHILD SUPPORT" in code:
+        return "Child_Support"
     
     # Check for 6-206 codes (Failure to Pay/Appear - FTP/FTA)
     # Format can be: 6206, 6-206, 6206A1, 6206A2, etc.
@@ -73,7 +77,7 @@ def infer_category_for_illinois_code(code_str):
     if "FTP" in code or "FAILURE TO PAY" in code or "FAILED TO PAY" in code:
         return "FTP"
     
-    if "CHILD SUPPORT" in code or "INSURANCE" in code or "FINANCIAL" in code:
+    if "INSURANCE" in code or "FINANCIAL" in code:
         return "FTP"
     
     if any(x in code for x in ["ACCIDENT", "RECKLESS", "SPEEDING", "HIT AND RUN", 
@@ -146,25 +150,32 @@ def process_monthly_data(file_path):
         else:
             time_data.append(None)
     
-    # Melt the dataframe to long format
-    melted_data = []
-    for idx, row in df.iterrows():
-        if idx >= len(time_data) or time_data[idx] is None:
-            continue
-        time_str = time_data[idx]
-        for col_name, auth_code in authority_cols:
-            count = row[col_name]
-            if pd.notna(count) and count != 0:
-                try:
-                    count_val = float(count)
-                    if count_val > 0:
-                        melted_data.append({
-                            'time': time_str,
-                            'authority': auth_code,
-                            'count': count_val
-                        })
-                except (ValueError, TypeError):
-                    pass
+        # Melt the dataframe to long format
+        melted_data = []
+        for idx, row in df.iterrows():
+            if idx >= len(time_data) or time_data[idx] is None:
+                continue
+            time_str = time_data[idx]
+            for col_name, auth_code in authority_cols:
+                count = row[col_name]
+                if pd.notna(count) and count != 0:
+                    try:
+                        count_val = float(count)
+                        if count_val > 0:
+                            # Check both authority code and column name for child support
+                            auth_text = f"{auth_code} {col_name}".upper()
+                            if "CHILD SUPPORT" in auth_text:
+                                category = "Child_Support"
+                            else:
+                                category = infer_category_for_illinois_code(auth_code)
+                            melted_data.append({
+                                'time': time_str,
+                                'authority': auth_code,
+                                'count': count_val,
+                                'category': category
+                            })
+                    except (ValueError, TypeError):
+                        pass
     
     if not melted_data:
         return pd.DataFrame()
@@ -230,12 +241,16 @@ def process_yearly_data(file_path, exclude_years=None):
                         if count_val > 0:
                             # For yearly data, distribute evenly across all 12 months
                             monthly_count = count_val / 12
+                            auth_code_str = str(auth_code).strip().upper()
+                            # Check for child support in authority code
+                            category = "Child_Support" if "CHILD SUPPORT" in auth_code_str else None
                             for month in range(1, 13):
                                 time_str = f"{year:04d}-{month:02d}"
                                 all_data.append({
                                     'time': time_str,
                                     'authority': str(auth_code).strip(),
-                                    'count': monthly_count
+                                    'count': monthly_count,
+                                    'category': category
                                 })
                     except (ValueError, TypeError):
                         pass
@@ -286,20 +301,29 @@ if not all_data:
 # Combine all data
 combined_df = pd.concat(all_data, ignore_index=True)
 
-# Group by time and authority, summing counts
-grouped = combined_df.groupby(['time', 'authority'], dropna=False)['count'].sum().reset_index()
-
-# Categorize each authority code
-grouped['category'] = grouped['authority'].apply(infer_category_for_illinois_code)
-
-# Aggregate by time and category
-agg_df = grouped.groupby(['time', 'category'], dropna=False)['count'].sum().reset_index()
+# If category already exists (from monthly data), use it; otherwise categorize
+if 'category' in combined_df.columns:
+    # Fill in missing categories first
+    mask = combined_df['category'].isna() | (combined_df['category'] == '')
+    if mask.any():
+        combined_df.loc[mask, 'category'] = combined_df.loc[mask, 'authority'].apply(infer_category_for_illinois_code)
+    # Group by time, authority, and category, summing counts
+    grouped = combined_df.groupby(['time', 'authority', 'category'], dropna=False)['count'].sum().reset_index()
+    # Now group by time and category (aggregating across authorities)
+    agg_df = grouped.groupby(['time', 'category'], dropna=False)['count'].sum().reset_index()
+else:
+    # Group by time and authority, summing counts
+    grouped = combined_df.groupby(['time', 'authority'], dropna=False)['count'].sum().reset_index()
+    # Categorize each authority code
+    grouped['category'] = grouped['authority'].apply(infer_category_for_illinois_code)
+    # Aggregate by time and category
+    agg_df = grouped.groupby(['time', 'category'], dropna=False)['count'].sum().reset_index()
 
 # Pivot to wide format
 pivot_df = agg_df.pivot(index='time', columns='category', values='count').fillna(0)
 
 # Ensure all categories are present
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 for cat in categories:
     if cat not in pivot_df.columns:
         pivot_df[cat] = 0

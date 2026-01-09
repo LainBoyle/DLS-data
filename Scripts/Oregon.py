@@ -42,7 +42,7 @@ def parse_oregon_date(date_str):
     return None
 
 def infer_category_for_oregon(sanction_type, native_code_literal):
-    """Categorize Oregon sanctions into FTP, FTA, road_safety, Other"""
+    """Categorize Oregon sanctions into FTP, FTA, road_safety, Child_Support, Other"""
     # Combine both fields for categorization
     text = ""
     if pd.notna(sanction_type):
@@ -60,13 +60,12 @@ def infer_category_for_oregon(sanction_type, native_code_literal):
     
     # If FTAFTC but no specific FTA indicator, it might be FTP (see below)
     
-    # Failure to pay/comply (FTP)
-    # FTAFTC with "F COMPLY" = Failure to Comply (FTP)
-    if "F COMPLY" in text or "FAILURE TO PAY" in text or "FAIL PAY" in text or "FPAYTAX" in text:
-        return "FTP"
-    
-    # Child support
+    # Child support - check BEFORE FTP to separate from other fees
     if "CHILDSUPPORT" in text or "CHLD SPRT" in text or "CHILD SUPPORT" in text:
+        return "Child_Support"
+    
+    # Failure to pay/comply (FTP) - exclude child support
+    if "F COMPLY" in text or "FAILURE TO PAY" in text or "FAIL PAY" in text or "FPAYTAX" in text:
         return "FTP"
     
     # Unsatisfied judgment
@@ -313,7 +312,7 @@ agg_df = combined_df.groupby(['time', 'category'], dropna=False).size().reset_in
 pivot_df = agg_df.pivot(index='time', columns='category', values='count').fillna(0)
 
 # Ensure all categories are present
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 for cat in categories:
     if cat not in pivot_df.columns:
         pivot_df[cat] = 0

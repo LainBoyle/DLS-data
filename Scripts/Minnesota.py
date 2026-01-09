@@ -44,7 +44,7 @@ def parse_minnesota_date(date_str):
     return None
 
 def infer_category_for_minnesota_code(sanction_code):
-    """Categorize Minnesota sanction codes into FTP, FTA, road_safety, Other"""
+    """Categorize Minnesota sanction codes into FTP, FTA, road_safety, Child_Support, Other"""
     if pd.isna(sanction_code):
         return "Other"
     
@@ -61,11 +61,15 @@ def infer_category_for_minnesota_code(sanction_code):
     if code in ['SD45', 'SA12']:  # SA12 might also be FTA related
         return "FTA"
     
-    # Failure to pay/comply (FTP)
-    # SD51 = Failure to Pay Fine
+    # Child support - check BEFORE FTP to separate from other fees
     # SD53 = Failure to Pay Child Support
+    if code == 'SD53':
+        return "Child_Support"
+    
+    # Failure to pay/comply (FTP) - exclude child support
+    # SD51 = Failure to Pay Fine
     # SD56 = Failure to Pay
-    if code in ['SD51', 'SD53', 'SD56']:
+    if code in ['SD51', 'SD56']:
         return "FTP"
     
     # Road safety - DUI/alcohol related
@@ -165,7 +169,7 @@ agg_df = combined_df.groupby(['time', 'category'], dropna=False).size().reset_in
 pivot_df = agg_df.pivot(index='time', columns='category', values='count').fillna(0)
 
 # Ensure all categories are present
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 for cat in categories:
     if cat not in pivot_df.columns:
         pivot_df[cat] = 0

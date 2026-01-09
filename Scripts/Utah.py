@@ -39,11 +39,16 @@ def parse_utah_date(date_str):
     return None
 
 def infer_category_for_utah_description(description):
-    """Categorize Utah action descriptions into FTP, FTA, road_safety, Other"""
+    """Categorize Utah action descriptions into FTP, FTA, road_safety, Child_Support, Other"""
     if pd.isna(description):
         return "Other"
     
     text = str(description).strip().upper()
+    
+    # Child support - check BEFORE FTP to separate from other fees
+    # Note: "NO CHILD SUPPORT" might mean failure to pay, but we'll include it
+    if "CHILD SUPPORT" in text:
+        return "Child_Support"
     
     # Failure to appear (FTA)
     # Note: After July 2012, Utah merged FTA cases into "FAIL TO COMPLY"
@@ -51,12 +56,11 @@ def infer_category_for_utah_description(description):
     if any(kw in text for kw in ["FAIL APPEAR", "FAILURE TO APPEAR", "FAIL TO APPEAR", "FTA"]):
         return "FTA"
     
-    # Failure to pay/comply (FTP)
+    # Failure to pay/comply (FTP) - exclude child support
     # Note: "FAIL TO COMPLY" after July 2012 includes both FTP and FTA cases,
     # but we categorize it as FTP since we can't distinguish them
     if any(kw in text for kw in ["FAIL TO COMPLY", "FAILURE TO PAY", "UNSATISFIED DAMAGES", 
-                                  "UNSATISFIED JUDGEMENT", "UNSATISFIED JUDGMENT", "NO CHILD SUPPORT",
-                                  "CHILD SUPPORT"]):
+                                  "UNSATISFIED JUDGEMENT", "UNSATISFIED JUDGMENT"]):
         return "FTP"
     
     # Insurance-related - FTP (financial responsibility)
@@ -165,7 +169,7 @@ agg_df = combined_df.groupby(['time', 'category'], dropna=False).size().reset_in
 pivot_df = agg_df.pivot(index='time', columns='category', values='count').fillna(0)
 
 # Ensure all categories are present
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 for cat in categories:
     if cat not in pivot_df.columns:
         pivot_df[cat] = 0

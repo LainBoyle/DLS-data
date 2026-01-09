@@ -11,19 +11,23 @@ WASHINGTON_DATA_DIR = Path(r"C:\Users\elain\.vscode\DLS Project\DLS Project\DLS 
 OUTPUT_CSV = DATA_ROOT / "Outputs" / "Washington.csv"
 
 def infer_category_for_washington_reason(reason):
-    """Categorize Washington suspension reasons into FTP, FTA, road_safety, Other"""
+    """Categorize Washington suspension reasons into FTP, FTA, road_safety, Child_Support, Other"""
     if pd.isna(reason):
         return "Other"
     
     text = str(reason).strip().upper()
     
+    # Child support - check BEFORE FTP to separate from other fees
+    if "CHILD SUPPORT" in text:
+        return "Child_Support"
+    
     # Failure to appear (FTA)
     if any(kw in text for kw in ["FAILURE TO APPEAR", "FAIL TO APPEAR", "FAILURE TO ANSWER", "FAIL TO ANSWER", "BENCH WARRANT", "WARRANT", "FTA"]):
         return "FTA"
     
-    # Failure to pay/comply (FTP)
+    # Failure to pay/comply (FTP) - exclude child support
     if any(kw in text for kw in ["FAILURE TO MAKE REQUIRED PAYMENT", "FAILED TO PAY", "FTP", 
-                                  "CHILD SUPPORT", "UNSATISFIED JUDGMENT", "FINANCIAL RESPONSIBILITY",
+                                  "UNSATISFIED JUDGMENT", "FINANCIAL RESPONSIBILITY",
                                   "FAILURE TO COMPLY WITH FINANCIAL", "FAILURE TO PAY FOR DAMAGES",
                                   "INSTALLMENT PAYMENT", "FINE AND COSTS"]):
         return "FTP"
@@ -134,7 +138,7 @@ agg_df = combined_df.groupby(['time', 'category'], dropna=False).size().reset_in
 pivot_df = agg_df.pivot(index='time', columns='category', values='count').fillna(0)
 
 # Ensure all categories are present
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 for cat in categories:
     if cat not in pivot_df.columns:
         pivot_df[cat] = 0

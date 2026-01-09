@@ -80,6 +80,7 @@ def parse_nevada_report(file_path):
         'FTP': [0],  # No data available
         'FTA': [0],  # No data available
         'road_safety': [0],  # No data available
+        'Child_Support': [0],  # No data available
         'Other': [suspended_count + revoked_count],  # All suspensions/revocations
         'total': [suspended_count + revoked_count]
     }
@@ -92,6 +93,7 @@ def parse_nevada_report(file_path):
         'FTP': 0,
         'FTA': 0,
         'road_safety': 0,
+        'Child_Support': 0,
         'Other': suspended_count + revoked_count,
         'total': suspended_count + revoked_count
     }])
@@ -125,7 +127,7 @@ if not all_data:
 combined_df = pd.concat(all_data, ignore_index=True)
 
 # Ensure all categories are present
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 for cat in categories:
     if cat not in combined_df.columns:
         combined_df[cat] = 0

@@ -38,25 +38,111 @@ def parse_newyork_date(date_str):
     return None
 
 def infer_category_for_newyork_reason(reason):
-    """Categorize New York suspension reasons into FTP, FTA, road_safety, Other"""
+    """Categorize New York suspension reasons into FTP, FTA, road_safety, Child_Support, Other"""
     if pd.isna(reason):
         return "Other"
     
     text = str(reason).strip().upper()
     
-    # Failure to appear (FTA)
-    if any(kw in text for kw in ["FAILURE TO ANSWER", "FAIL TO ANSWER", "FAILURE TO APPEAR", 
-                                  "FAIL TO APPEAR", "APPEARANCE", "SUMMONS"]):
+    # Child support - check BEFORE FTP to separate from other fees
+    # Must be specifically about paying child support, not child-related road safety issues
+    # Exclude: "CHILD RESTRAINT", "CHILD IN VEHICLE", "AGGRAVATED DWI - CHILD IN VEHICLE" (these are road safety)
+    # Only match if it contains "PAY" and "CHILD SUPPORT" together, or "CHILD SUPPORT" with payment context
+    if ("PAY" in text and "CHILD SUPPORT" in text) or \
+       ("CHILD SUPPORT" in text and ("COURT ORDERED" in text or "FAILED" in text or "FAILURE" in text)):
+        # Exclude road safety cases that mention child
+        if "RESTRAINT" not in text and "CHILD IN VEHICLE" not in text and "DWI" not in text and "INTOXICATED" not in text:
+            return "Child_Support"
+    
+    # Road safety - check FIRST before FTA/FTP to catch all violations
+    
+    # Alcohol/DUI/DWI - comprehensive checks including all percentage variations
+    if any(kw in text for kw in [
+        "DRIVING WHILE INTOXICATED", "DWI", "DUI", "DWAI",
+        "DRIVING UNDER INFLUENCE", "DRIVING WHILE ABILITY IMPAIRED",
+        "INTOXICATED", "ALCOHOL", "BAC", "BLOOD ALCOHOL",
+        ".08%", ".10%", ".12%", ".15%", ".18%", ".04%", ".06%",  # All BAC percentages
+        "0.08%", "0.10%", "0.12%", "0.15%", "0.18%", "0.04%", "0.06%",
+        "CHEMICAL TEST", "REFUSAL", "IMPLIED CONSENT",
+        "AGGRAVATED DWI", "OPERATING AFTER CONSUMING ALCOHOL",
+        "REPEAT ALCOHOL", "ALCOHOL/DRUG INCIDENT"
+    ]):
+        return "road_safety"
+    
+    # Drug-related driving offenses
+    if any(kw in text for kw in [
+        "DRUG", "CONTROLLED SUBSTANCE", "MARIJUANA", "NARCOTIC",
+        "OPERATOR IMPAIRED BY", "USING DRUGS"
+    ]):
+        return "road_safety"
+    
+    # Reckless and dangerous driving
+    if any(kw in text for kw in [
+        "RECKLESS", "RECKLESS DRIVING", "RECKLESS DISREGARD",
+        "CARELESS", "NEGLIGENT", "NEGLIGENCE",
+        "DANGEROUS DRIVING", "DANGEROUS"
+    ]):
+        return "road_safety"
+    
+    # Speeding violations
+    if any(kw in text for kw in [
+        "SPEEDING", "SPEED", "SPEED CONTEST", "SPEED IN ZONE",
+        "SPEED NOT REASONABLE", "EXCESSIVE SPEED"
+    ]):
+        return "road_safety"
+    
+    # Accidents and hit-and-run
+    if any(kw in text for kw in [
+        "ACCIDENT", "HIT AND RUN", "LEAVE SCENE", "LEAVING THE SCENE",
+        "PERSONAL INJURY ACCIDENT", "PHYSICAL INJURY ACCIDENT",
+        "FAILURE TO REPORT AN ACCIDENT", "FAILURE TO ATTEND ACCIDENT"
+    ]):
+        return "road_safety"
+    
+    # Vehicular crimes (assault, homicide, etc.)
+    if any(kw in text for kw in [
+        "VEHICULAR", "VEHICULAR ASSAULT", "VEHICULAR HOMICIDE",
+        "AGGRAVATED VEHICULAR", "ASSAULT DUE TO THE OPERATION",
+        "ASSAULT OF A TRAFFIC", "HOMICIDE/MOTOR VEHICLE",
+        "CRIMINAL NEGLIGENCE", "FATALITY", "FATAL"
+    ]):
+        return "road_safety"
+    
+    # Commercial vehicle violations (often safety-related)
+    if any(kw in text for kw in [
+        "COMMERCIAL MOTOR VEHICLE", "CMV", "CDL HOLDER",
+        "HAZARDOUS MATERIALS", "HAZMAT"
+    ]) and any(kw in text for kw in ["INTOXICATED", "ALCOHOL", "DWI", "DUI", "NEGLIGENT", "HOMICIDE"]):
+        return "road_safety"
+    
+    # Habitual offender and serious violations
+    if any(kw in text for kw in [
+        "HABITUAL", "HABITUAL OFFENDER", "SERIOUS VIOLATION",
+        "MAJOR VIOLATION", "REPEAT OFFENDER"
+    ]):
+        return "road_safety"
+    
+    # Child safety violations (restraint devices, etc.) - road safety, not child support
+    if any(kw in text for kw in [
+        "CHILD RESTRAINT", "NO CHILD RESTRAINT", "RESTRAINT DEVICE",
+        "SEAT BELT", "RESTRAINT"
+    ]):
+        return "road_safety"
+    
+    # Failure to appear (FTA) - check after road safety
+    if any(kw in text for kw in [
+        "FAILURE TO ANSWER", "FAIL TO ANSWER", "FAILURE TO APPEAR", 
+        "FAIL TO APPEAR", "APPEARANCE", "SUMMONS"
+    ]):
         return "FTA"
     
-    # Failure to pay/comply (FTP)
-    if any(kw in text for kw in ["FAILURE TO PAY", "FAIL TO PAY", "FINE", "DISHONORED CHECK",
-                                  "POST BOND"]):
+    # Failure to pay/comply (FTP) - check after child support and road safety
+    # Exclude child support from FTP
+    if any(kw in text for kw in [
+        "FAILURE TO PAY", "FAIL TO PAY", "FINE", "DISHONORED CHECK",
+        "POST BOND", "DEFAULT IN AGREEMENT TO PAY", "DEFAULT IN COURT ORDER"
+    ]) and "CHILD SUPPORT" not in text:
         return "FTP"
-    
-    # Road safety - would need specific codes/descriptions
-    # New York data appears to be mostly FTP/FTA based on the sample
-    # If there are DUI or other road safety reasons, they would go here
     
     # Default to Other
     return "Other"
@@ -133,7 +219,7 @@ agg_df = combined_df.groupby(['time', 'category'], dropna=False).size().reset_in
 pivot_df = agg_df.pivot(index='time', columns='category', values='count').fillna(0)
 
 # Ensure all categories are present
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 for cat in categories:
     if cat not in pivot_df.columns:
         pivot_df[cat] = 0

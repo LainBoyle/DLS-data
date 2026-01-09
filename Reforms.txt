@@ -24,3 +24,6 @@ Utah,	3/2021,	HB 143,	5/2021,	Full,	Partial
 Vermont,	5/2016,	H 571,	7/2016,	Partial,	—
 Virginia,	5/2019,	HB 1700,	7/2019,	Partial,	—
 West Virginia,	5/2020,	HB 4958,	7/2020,	Full,	—
+Washington, 3/2012, HB 2617, 6/2012, Partial, —
+Washington, 5/2021, HB 1513, 10/2021, Full, Full
+Washington, 5/2023, HB 1095, 7/2023, Full, Full

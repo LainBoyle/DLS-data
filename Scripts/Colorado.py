@@ -187,7 +187,6 @@ FTP_KEYWORDS = [
     "failure to pay",
     "ftp",
     "unsatisfied judgment",
-    "child support",
     "financial responsibility",
     "no liability insurance",
     "insurance",
@@ -197,6 +196,10 @@ FTP_KEYWORDS = [
     "interlock lease",
     "failed to register",
     "fail to register",
+]
+
+CHILD_SUPPORT_KEYWORDS = [
+    "child support",
 ]
 
 FTA_KEYWORDS = [
@@ -243,6 +246,9 @@ def _extract_code(col_name: str) -> str | None:
 #infers tje category from the text description
 def infer_category_from_text(text: str) -> str:
     desc = text.lower()
+    # Child support - check BEFORE FTP to separate from other fees
+    if any(kw in desc for kw in CHILD_SUPPORT_KEYWORDS):
+        return "Child_Support"
     if any(kw in desc for kw in FTA_KEYWORDS):
         return "FTA"
     if any(kw in desc for kw in FTP_KEYWORDS):
@@ -253,8 +259,16 @@ def infer_category_from_text(text: str) -> str:
 
 #decides category for a single column
 def infer_category_for_column(col_name: str) -> str:
+    # Check for child support FIRST (in column name) before checking explicit codes
+    col_upper = str(col_name).upper()
+    if "CHILD SUPPORT" in col_upper or "CHILDSUPPORT" in col_upper:
+        return "Child_Support"
+    
     code = _extract_code(col_name)
     if code and code in EXPLICIT_CODE_CATEGORY:
+        # Double-check: if the code is explicitly FTP but column name suggests child support, use Child_Support
+        if EXPLICIT_CODE_CATEGORY[code] == "FTP" and ("CHILD SUPPORT" in col_upper or "CHILDSUPPORT" in col_upper):
+            return "Child_Support"
         return EXPLICIT_CODE_CATEGORY[code]
     return infer_category_from_text(col_name)
 
@@ -275,7 +289,7 @@ if "time" in df_out.columns:
 else:
     out = pd.DataFrame(index=df_out.index)
 
-categories = ["FTP", "FTA", "road_safety", "Other"]
+categories = ["FTP", "FTA", "road_safety", "Child_Support", "Other"]
 
 #sum the columns that belong to each category
 for cat in categories:
